@@ -1,4 +1,4 @@
-public class LinearCongruentialGenerator implements IncompatibleRandomInterface {
+public class LinearCongruentialGenerator implements RandomInterface {
 // Generates pseudo-random numbers using:
 // X(n+1) = (aX(n) + c) (mod m)
 // for suitable a, c and m. The numbers are "normalised" to the range
@@ -30,8 +30,8 @@ public class LinearCongruentialGenerator implements IncompatibleRandomInterface 
 
   public static void main(String args[]) {
   // Just a little bit of test code, to illustrate use of this class.
-    IncompatibleRandomInterface r=new LinearCongruentialGenerator();
-    for (int i=0; i<10; i++) System.out.println(r.getNextNumber());
+    RandomInterface r=new LinearCongruentialGenerator();
+    for (int i=0; i<10; i++) System.out.println(r.next());
 
   // Since RandomInterface doesn't know about the instance variables defined in this
   // particular implementation, LinearCongruentialGenerator, we need to type-cast
@@ -42,9 +42,8 @@ public class LinearCongruentialGenerator implements IncompatibleRandomInterface 
 
   }
 
-  public double getNextNumber() {
+  public double next() {
     seed = (a * seed + c) % m;
     return (double) seed/m;
   }
 }
-  
