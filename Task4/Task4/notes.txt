@@ -1,0 +1,43 @@
+Random Interface : Interface
+Methods ----
++double next()
+
+Game.java : Class
++static BufferedReader br
++static RandomInterface r
++static ArrayList<String> cardList
++static HashSet<String> cardsChosen
++static Hashset<Integer> numbersRolled
+
+Methods ----
+
++static void playCardGame()
++static void initialiseCardGame()
+static void mainCardGame()
+static void declareVardGameWinner()
+static void playDieGame()
+static void initialiseDieGame()
+static void mainDieGame()
+static void declareDieGameWinner()
+static void main()
+
+LCG.java	class implements RandomInterface
+
+-a :long
+-c :long
+-m :long
+-seed :long
+
++LCG(a_value, c_value, m_value, s_value [all long])
++LCG(seed:long)
++LCG()
++ double next()
+
+
+
+[<<RandomInterface>>;|+next(): double]-[note: next() is STATIC{bg:wheat}]
+[Game; +br: BufferedReader; +r: RandomInterface; +cardList: ArrayList-String; +cardsChosen: Hashset-String; +numbersRolled: HashSet-Integer; |+playCardGame; +initialiseCardGame(); +mainCardGame(); +playDieGame(); +initialiseDieGame(); +mainDieGame(); +declareDieGameWinner(); +main()]-[note: All methods and variables are STATIC{bg:wheat}]
+
+[LinearCongruentialGenerator| -a: long; -c: long; -m: long; -seed: long|+LinearCongruentialGenerator(a_value: long, c_value: long, m_value; long, s_value: long); +LinearCongruentialGenerator(seed: long); +LinearCongruentialGenerator(); +next(): double]
+[<<RandomInterface>>]^[LinearCongruentialGenerator]
+[<<RandomInterface>>]->[Game]]
