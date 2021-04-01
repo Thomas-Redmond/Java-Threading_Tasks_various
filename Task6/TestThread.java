@@ -2,10 +2,11 @@ public class TestThread extends Thread {
 private int theValue;
 public TestThread(int aValue) { theValue=aValue; }
 
-public void run() {
+public synchronized void run() {
 	Example e = Example.getInstance();
 	e.setVal(theValue);
 	}
+
 public static void main(String[] args) throws java.lang.InterruptedException {
 	TestThread[] tests=new TestThread[10000];
 	for (int i=0; i<10000; i++) { tests[i]=new TestThread(i); }
@@ -18,8 +19,8 @@ public static void main(String[] args) throws java.lang.InterruptedException {
 }
 class Example {
 private static Example myInstance;
-private int updateCount=0;
-private int val=0;
+private static int updateCount=0;
+private static int val=0;
 
 private Example() { }
 public static Example getInstance() {
