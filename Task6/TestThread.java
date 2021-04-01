@@ -2,7 +2,7 @@ public class TestThread extends Thread {
 private int theValue;
 public TestThread(int aValue) { theValue=aValue; }
 
-public synchronized void run() {
+public void run() {
 	Example e = Example.getInstance();
 	e.setVal(theValue);
 	}
@@ -18,13 +18,12 @@ public static void main(String[] args) throws java.lang.InterruptedException {
 	}
 }
 class Example {
-private static Example myInstance;
+private static Example myInstance = new Example();
 private static int updateCount=0;
 private static int val=0;
 
 private Example() { }
 public static Example getInstance() {
-	if (myInstance == null) {myInstance = new Example();}
 	return myInstance;
 }
 public synchronized void setVal(int aVal) {val=aVal; updateCount++;}
