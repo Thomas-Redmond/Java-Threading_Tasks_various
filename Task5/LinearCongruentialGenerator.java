@@ -23,8 +23,8 @@ public class LinearCongruentialGenerator implements RandomInterface {
   // (Re-)set seed to an arbitrary value, having first constructed the object using
   // zero as the seed. The point is that we don't know what m is until after it has
   // been initialised.
-    this(0);
-    seed=System.currentTimeMillis() % m;
+
+  this(0);  seed=System.currentTimeMillis() % m;
 
   }
 

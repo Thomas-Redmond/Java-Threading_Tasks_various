@@ -1,0 +1,13 @@
+LCG fine change name
+
+<<RandomInterface>> loosely coupled with LCG.
+Delete interface and interact directly with game will avoid this.
+Dispensible - absence will make the code clear, more efficent and easier to understand.
+
+Game
+Split into Choosing the game
+Playing the dice game
+Playing the card game
+
+This will increase cohesion, whilst causing some coupling.
+

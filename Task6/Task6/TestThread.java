@@ -26,7 +26,7 @@ public static Example getInstance() {
 	if (myInstance == null) {myInstance = new Example();}
 	return myInstance;
 }
-public void setVal(int aVal) { val=aVal; updateCount++; }
+public synchronized void setVal(int aVal) {val=aVal; updateCount++;}
 public int getVal() { return val; }
 public int getUpdateCount() { return updateCount; }
 }
