@@ -21,7 +21,7 @@ public class CardGame implements GameInterface{
       // Play the main game phase
       mainGame();
 
-      // Now see if (s)he has won!
+      // Now see if they have won!
       declareWinner();
   }
 
