@@ -17,12 +17,9 @@ public class ChooseGame{
     }
 
     else if (ans.equals("d")) {
-      //i.playDieGame();
+      DiceGame dice = new DiceGame();
+      dice.play();
     }
-
-    //else if (ans.equal("example")){
-      // playexampleGame();
-    //}
 
     else{
       // Response unacceptable loop back to start of main
