@@ -13,8 +13,8 @@ public class DiningPhilosophers {
             Object leftFork = forks[i];
             Object rightFork = forks[(i + 1) % forks.length];
 
-            philosophers[i] = new Philosopher(leftFork, rightFork);
-            
+            philosophers[i] = new Philosopher(leftFork, rightFork, i);
+
             Thread t = new Thread(philosophers[i], "Philosopher " + (i + 1));
             t.start();
         }
