@@ -47,6 +47,7 @@ public class Philosopher implements Runnable {
                       doAction(System.nanoTime() + ": Put down right fork. Back to thinking");
                 }
               }
+          }
         } catch (InterruptedException e) {
             Thread.currentThread().interrupt();
             return;
